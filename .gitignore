@@ -1,2 +1,3 @@
 kilimo_backend/*/__pycache__/*
 db.sqlite3
+kilimo_backend/*/*/__pycache__/*

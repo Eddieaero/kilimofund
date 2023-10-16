@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'users',
     'loans',
-    # 'messages',
+    'messages',
     'rest_framework.authtoken',
     
 ]

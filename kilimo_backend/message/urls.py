@@ -2,7 +2,7 @@
 
 from django.urls import path
 from . import views
-from .views import MessageListCreateView, MessageDetailView
+from .views import MessageListCreateView # removed 'MessageDetailView' because it is not implemented yet
 
 
 urlpatterns = [
@@ -10,5 +10,5 @@ urlpatterns = [
     path('list/', views.message_list, name='message_list'),
     path('view/<int:message_id>/', views.view_message, name='view_message'),
     path('messages/', MessageListCreateView.as_view(), name='message-list-create'),
-    path('messages/<int:pk>/', MessageDetailView.as_view(), name='message-detail'),
+    # path('messages/<int:pk>/', MessageDetailView.as_view(), name='message-detail'),
 ]

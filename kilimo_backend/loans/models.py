@@ -17,7 +17,8 @@ class LoanRequest(models.Model):
 
 class LoanDisbursement(models.Model):
     loan_request = models.OneToOneField(LoanRequest, on_delete=models.CASCADE)
-    disbursement_date = models.DateTimeField(auto_now_add=True)
+    date_created = models.DateTimeField(auto_now_add=True)
+    disbursement_date = models.DateTimeField()
 
 
 

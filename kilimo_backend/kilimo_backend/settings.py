@@ -43,9 +43,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'users',
     'loans',
-    # 'messages',
-    'rest_framework.authtoken',
-    
+    'message',
+    # 'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -56,8 +55,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'rest_framework.authtoken.middleware.AuthenticationMiddleware'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',  # Add if needed
+    ],
+}
+
 
 ROOT_URLCONF = 'kilimo_backend.urls'
 

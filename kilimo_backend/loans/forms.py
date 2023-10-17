@@ -9,7 +9,7 @@ class LoanRequestForm(forms.ModelForm):
 class LoanDisbursementForm(forms.ModelForm):
     class Meta:
         model = LoanDisbursement
-        fields = ['disbursement_date']  # Fields for the disbursement form
+        fields = ['disbursement_date'] # Fields for the disbursement form
 
 class LoanRepaymentForm(forms.ModelForm):
     class Meta:

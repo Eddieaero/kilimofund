@@ -31,6 +31,13 @@
 
         flex: 6;
 
+        .cardboard{
+            display: flex;
+            // position: relative;
+            // width: 10rem;
+            // height: 10rem;
+        }
+
         .widgets{
             display: flex;
             padding: 20px;

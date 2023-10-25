@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500&display=swap");
+:root {
+  --primary-color: #26aa52;
+  --secondary-color: #dbdbdb;
+  --colorOne: #4494f0;
+  --colorTwo: #7caab3;
+  --HoverColor: #b8e2f5;
+  --whiteColor: #f7f7f7;
+  --blackColor: #1d1a1a;
+  --textColor: #272727;
+  --borderColor: #dbdbdb;
+  --WhiteColorDeam: #f5f5f5;
+  --greyBg: #f5f5f5;
+  --greyText: #757575;
+  --inputColor: #f5f5f5;
+  --boxShadow: 0 0 10px rgba(0,0,0,0.1);
+  --transition: .4s ease-in-out;
+}
+
+.widget {
+  display: flex;
+  flex: 1;
+  padding: 5px;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  height: 100px;
+  width: -moz-max-content;
+  width: max-content;
+}
+.widget .left,
+.widget .right {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex: 1;
+}
+.widget .left .title,
+.widget .right .title {
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--greyText);
+}
+.widget .left .counter,
+.widget .right .counter {
+  font-size: 28px;
+  font-weight: 300;
+}
+.widget .left .link,
+.widget .right .link {
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 12px;
+  border-bottom: 1px solid var(--greyText);
+}
+.widget .left .percentage,
+.widget .right .percentage {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-left: 25px;
+}
+.widget .left .percentage.positive,
+.widget .right .percentage.positive {
+  color: green;
+}
+.widget .left .percentage.negative,
+.widget .right .percentage.negative {
+  color: red;
+}
+.widget .left .icon,
+.widget .right .icon {
+  font-size: 18px;
+  padding: 5px;
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  align-self: flex-end;
+}/*# sourceMappingURL=widget.css.map */

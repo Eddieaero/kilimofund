@@ -1,1 +1,302 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+
+:root {
+  --primary-color: #26aa52;
+  --secondary-color: #dbdbdb;
+  --colorOne: #4494f0;
+  --colorTwo: #7caab3;
+  --HoverColor: #b8e2f5;
+  --whiteColor: #f7f7f7;
+  --blackColor: #1d1a1a;
+  --textColor: #272727;
+  --borderColor: #dbdbdb;
+  --WhiteColorDeam: #f5f5f5;
+  --greyBg: #f5f5f5;
+  --greyText: #757575;
+  --inputColor: #f5f5f5;
+  --boxShadow: 0 0 10px rgba(0,0,0,0.1);
+  --transition: .4s ease-in-out;
+}
+
+body {
+  background: var(--whiteColor);
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.section {
+  padding: 4rem 0 2rem;
+}
+
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.icon {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  align-items: center;
+}
+
+.none {
+  display: none;
+}
+
+.btn {
+  padding: 0.7rem 1.5rem;
+  border-radius: 3rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  outline: none;
+  background: var(--primary-color);
+  color: var(--whiteColor);
+}
+.btn:hover {
+  background: var(--HoverColor);
+}
+.btn a {
+  color: var(--whiteColor);
+  font-weight: 500;
+}
+
+img, video {
+  width: 100%;
+  height: auto;
+}
+
+input {
+  font-size: 100%;
+  color: var(--greyText);
+}
+
+P {
+  font-size: 13px;
+  color: var(--greyText);
+  line-height: 22px;
+}
+
+h4 {
+  padding: 1rem;
+  font-weight: 700;
+  color: var(--blackColor);
+}
+
+h2 {
+  font-size: 25px;
+  padding: 1rem 0;
+  color: var(--blackColor);
+}
+
+.navBar {
+  position: fixed;
+  flex-direction: column;
+  width: 100%;
+  z-index: 1000;
+}
+.navBar .navBarOne, .navBar .navBarTwo {
+  justify-content: space-between;
+  padding: 1rem;
+  width: 100%;
+}
+.navBar .navBarOne {
+  background: var(--secondary-color);
+}
+.navBar .navBarOne .icon:hover {
+  color: var(--primary-color);
+}
+.navBar .navBarOne .atb {
+  gap: 1rem;
+}
+.navBar .navBarOne .atb span {
+  color: var(--blackColor);
+  font-size: 13px;
+  cursor: pointer;
+}
+.navBar .navBarOne .atb span:hover {
+  color: var(--primary-color);
+}
+.navBar .navBarTwo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 3 rem;
+  padding: 1.5rem 1rem;
+  position: fixed;
+  transition: 0.3s ease-in-out;
+}
+.navBar .navBarTwo .logoDiv .logo {
+  width: 20%;
+}
+@media screen and (max-width: 768px) {
+  .navBar .navBarTwo .navBarMenu {
+    position: absolute;
+    background: var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    top: 5rem;
+    right: 50%;
+    width: 80%;
+    transform: translateX(50%);
+    z-index: 2000;
+    box-shadow: var(--boxShadow);
+    border: 3px solid var(--whiteColor);
+    transition: 0.4s ease-in-out;
+  }
+  .navBar .navBarTwo .navBarMenu .menu {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  .navBar .navBarTwo .navBarMenu .menu .listItem {
+    padding: 0.5rem 0;
+    cursor: pointer;
+    color: var(--blackColor);
+  }
+  .navBar .navBarTwo .navBarMenu .menu .listItem:hover {
+    color: var(--primary-color);
+    font-weight: 700;
+  }
+  .navBar .navBarTwo .navBarMenu .btnOne {
+    display: block;
+    justify-content: center;
+    margin: auto;
+    margin-top: 1rem;
+  }
+  .navBar .navBarTwo .navBarMenu .btnTwo {
+    display: none;
+  }
+  .navBar .navBarTwo .toggleIcon .icon {
+    font-size: 30px;
+    color: var(--blackColor);
+  }
+  .navBar .navBarTwo .showNavBar {
+    right: 50%;
+    transition: 0.5s ease-in-out;
+  }
+}
+.navBar .navbar_With_Bg {
+  background: var(--secondary-color);
+  padding: 0.5rem 1rem;
+}
+
+.home {
+  padding-top: 10rem;
+  text-align: center;
+  gap: 2rem;
+  flex-direction: column;
+}
+.home .mainText {
+  color: var(--blackColor);
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 2.5rem;
+}
+.home .homeImages {
+  width: 100%;
+  margin: 1rem auto 0;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5rem;
+}
+.home .homeImages .videoDiv {
+  width: 100%;
+}
+.home .homeImages .videoDiv .video {
+  border-radius: 10rem;
+}
+.home .homeImages .plane {
+  position: absolute;
+  width: 100%;
+  top: -10%;
+}
+
+.search .sectionContainer {
+  width: 100%;
+  padding: 1.5rem;
+  border: 2px solid var(--greyBg);
+  border-radius: 16px;
+  row-gap: 2rem;
+}
+.search .sectionContainer .btns {
+  background: var(--secondary-color);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  flex-direction: column;
+  margin: auto;
+}
+.search .sectionContainer .btns .singleBtn {
+  padding: 0.8rem 1.5rem;
+  font-size: 13px;
+  border-radius: 3rem;
+  width: 80%;
+  text-align: center;
+}
+.search .sectionContainer .btns .singleBtn:hover {
+  background: var(--primary-color);
+  color: var(--whiteColor);
+  font-weight: 500;
+  transition: 0.4s ease;
+}
+.search .sectionContainer .btns .active {
+  background: var(--primary-color);
+  color: var(--whiteColor);
+  font-weight: 500;
+}
+.search .sectionContainer .singleInputs {
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+}
+.search .sectionContainer .singleInputs .singleInput .iconDiv {
+  padding: 16px;
+  border-radius: 3rem;
+  background: var(--secondary-color);
+  margin-right: 1rem;
+}
+.search .sectionContainer .singleInputs .singleInput .iconDiv .icon {
+  color: var(--blackColor);
+  opacity: 0.7;
+}
+.search .sectionContainer .singleInputs .singleInput .texts h4 {
+  padding-top: 0;
+  padding-bottom: 0.7rem;
+  color: var(--blackColor);
+  font-weight: 700;
+}
+.search .sectionContainer .singleInputs .singleInput .texts input {
+  width: 95%;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.search .sectionContainer .singleInputs .singleInput .texts input::-moz-placeholder {
+  font-size: 12px;
+  opacity: 0.5;
+}
+.search .sectionContainer .singleInputs .singleInput .texts input::placeholder {
+  font-size: 12px;
+  opacity: 0.5;
+}/*# sourceMappingURL=main.css.map */

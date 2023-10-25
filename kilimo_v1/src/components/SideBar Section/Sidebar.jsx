@@ -28,7 +28,7 @@ const Sidebar = () => {
 
             <div className="menuDiv">
                 <h3 className="divTitle">
-                    QUICKMENU
+                    DASHBOARD
                 </h3>
                 <ul className="menuLists grid">
 
@@ -36,7 +36,7 @@ const Sidebar = () => {
                         <a href="" className="menuLink flex">
                             <IoSpeedometerOutline className="icon"/>
                             <span className="smallText">
-                                Dash board
+                                Verify
                             </span>
                         </a>
                     </li>
@@ -45,7 +45,7 @@ const Sidebar = () => {
                         <a href="" className="menuLink flex">
                             <MdOutlineDeliveryDining className="icon"/>
                             <span className="smallText">
-                                My orders
+                              Loan application
                             </span>
                         </a>
                     </li>
@@ -54,7 +54,7 @@ const Sidebar = () => {
                         <a href="" className="menuLink flex">
                             <MdOutlineExplore className="icon"/>
                             <span className="smallText">
-                                Explore
+                               How to apply
                             </span>
                         </a>
                     </li>
@@ -63,7 +63,7 @@ const Sidebar = () => {
                         <a href="" className="menuLink flex">
                             <IoTrophyOutline className="icon"/>
                             <span className="smallText">
-                                products
+                                Report
                             </span>
                         </a>
                     </li>

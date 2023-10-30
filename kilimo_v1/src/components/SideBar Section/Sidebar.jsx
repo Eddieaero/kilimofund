@@ -33,7 +33,7 @@ const Sidebar = () => {
                 <ul className="menuLists grid">
 
                     <li className="listItem">
-                        <a href="" className="menuLink flex">
+                        <a href="#" className="menuLink flex">
                             <IoSpeedometerOutline className="icon"/>
                             <span className="smallText">
                                 Verify
@@ -42,7 +42,7 @@ const Sidebar = () => {
                     </li>
 
                     <li className="listItem">
-                        <a href="" className="menuLink flex">
+                        <a href="#" className="menuLink flex">
                             <MdOutlineDeliveryDining className="icon"/>
                             <span className="smallText">
                               Loan application
@@ -51,7 +51,7 @@ const Sidebar = () => {
                     </li>
 
                     <li className="listItem">
-                        <a href="" className="menuLink flex">
+                        <a href="#" className="menuLink flex">
                             <MdOutlineExplore className="icon"/>
                             <span className="smallText">
                                How to apply
@@ -60,7 +60,7 @@ const Sidebar = () => {
                     </li>
 
                     <li className="listItem">
-                        <a href="" className="menuLink flex">
+                        <a href="#" className="menuLink flex">
                             <IoTrophyOutline className="icon"/>
                             <span className="smallText">
                                 Report
@@ -80,7 +80,7 @@ const Sidebar = () => {
                 <ul className="menuLists grid">
 
                     <li className="listItem">
-                        <a href="" className="menuLink flex">
+                        <a href="#" className="menuLink flex">
                             <VscPieChart className="icon"/>
                             <span className="smallText">
                                 charts
@@ -89,33 +89,31 @@ const Sidebar = () => {
                     </li>
 
                     <li className="listItem">
-                        <a href="" className="menuLink flex">
-                            <IoMdTrendingUp className="icon"/>
-                            <span className="smallText">
-                                Trends
-                            </span>
-                        </a>
-                    </li>
-
-                    <li className="listItem">
-                        <a href="" className="menuLink flex">
-                            <MdOutlinePermContactCalendar className="icon"/>
-                            <span className="smallText">
-                                Contacts
-                            </span>
-                        </a>
-                    </li>
-
-                    <li className="listItem">
-                        <a href="" className="menuLink flex">
+                        <a href="#" className="menuLink flex">
                             <BiCreditCardFront className="icon"/>
                             <span className="smallText">
-                                Billings
+                                Loan details
                             </span>
                         </a>
                     </li>
 
+                    <li className="listItem">
+                        <a href="#" className="menuLink flex">
+                            <MdOutlinePermContactCalendar className="icon"/>
+                            <span className="smallText">
+                                Supplier
+                            </span>
+                        </a>
+                    </li>
 
+                    <li className="listItem">
+                        <a href="#" className="menuLink flex">
+                            <IoMdTrendingUp className="icon"/>
+                            <span className="smallText">
+                                History
+                            </span>
+                        </a>
+                    </li>
 
                 </ul>
             </div>

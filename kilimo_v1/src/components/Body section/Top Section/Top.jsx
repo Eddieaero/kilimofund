@@ -44,12 +44,16 @@ const Top = () => {
 
 
               <div className='rightCard flex'>
-                <h1>create and sell extraordinary products</h1>
+                {/* <h1>create and sell extraordinary products</h1> */}
+                <h1>Elevate your Agricultural productivity</h1>
+                {/* <p>The world's fast growing industry today are natural made products</p> */}
                 <p>The world's fast growing industry today are natural made products</p>
 
                 <div className='buttons flex'>
-                    <button className='btn'>Explore More</button>
-                    <button className='btn transparent'>Top Sellers</button>
+                    {/* <button className='btn'>Explore More</button> */}
+                    <button className='btn'>Apply now</button>
+                    {/* <button className='btn transparent'>Top Sellers</button> */}
+                    <button className='btn transparent'>Top Suppliers</button>
                 </div>
 
                 <div className='videoDiv'>

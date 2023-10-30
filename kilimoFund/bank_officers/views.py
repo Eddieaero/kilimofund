@@ -1,8 +1,8 @@
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework import status
-from .models import Message
-from .serializers import MessageSerializer
+from .models import Message, Guidelines
+from .serializers import MessageSerializer, GuidelinesSerializer
 from rest_framework.permissions import IsAuthenticated
 
 @api_view(['POST'])
@@ -20,3 +20,10 @@ def get_messages(request, receiver_id):
     messages = Message.objects.filter(receiver_id=receiver_id, sender=request.user)
     serializer = MessageSerializer(messages, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+def get_loan_application_guidelines(request):
+    guidelines = Guidelines.objects.all()
+    serializer = GuidelinesSerializer(guidelines, many=True)
+    return Response(serializer.data)

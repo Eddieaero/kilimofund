@@ -57,3 +57,14 @@ def list_loan_applications(request):
     loan_applications = LoanApplication.objects.filter(farmer=request.user)
     serializer = LoanApplicationSerializer(loan_applications, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def check_loan_status(request, loan_application_id):
+    try:
+        loan_application = LoanApplication.objects.get(id=loan_application_id, farmer=request.user)
+        serializer = LoanApplicationSerializer(loan_application)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    except LoanApplication.DoesNotExist:
+        return Response({'message': 'Loan application not found'}, status=status.HTTP_404_NOT_FOUND)

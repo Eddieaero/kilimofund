@@ -1,10 +1,12 @@
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
-from .models import Farmer
-from .serializers import FarmerSerializer
+from .models import Farmer, LoanApplication
+from rest_framework import status
+from .serializers import FarmerSerializer, LoanApplicationSerializer
+from rest_framework.permissions import IsAuthenticated
 
 @api_view(['POST'])
 def signup(request):
@@ -37,3 +39,32 @@ def verify_membership(request):
     if membership_verified:
         return Response({'message': 'Membership verified'})
     return Response({'message': 'Membership not verified'}, status=400)
+
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def create_loan_application(request):
+    serializer = LoanApplicationSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save(farmer=request.user)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def list_loan_applications(request):
+    loan_applications = LoanApplication.objects.filter(farmer=request.user)
+    serializer = LoanApplicationSerializer(loan_applications, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def check_loan_status(request, loan_application_id):
+    try:
+        loan_application = LoanApplication.objects.get(id=loan_application_id, farmer=request.user)
+        serializer = LoanApplicationSerializer(loan_application)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    except LoanApplication.DoesNotExist:
+        return Response({'message': 'Loan application not found'}, status=status.HTTP_404_NOT_FOUND)

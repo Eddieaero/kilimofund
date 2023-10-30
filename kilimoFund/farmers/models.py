@@ -12,3 +12,15 @@ class Farmer(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class LoanApplication(models.Model):
+    farmer = models.ForeignKey(Farmer, on_delete=models.CASCADE)
+    bank_account = models.CharField(max_length=50)
+    supplier = models.CharField(max_length=100)
+    reason = models.TextField()
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    date_applied = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Loan Application by {self.farmer.name}"

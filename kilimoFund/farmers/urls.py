@@ -1,10 +1,10 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import FarmerViewSet
+from django.urls import path
+from .views import signup, login, verify_membership
 
-router = DefaultRouter()
-router.register(r'farmers', FarmerViewSet)
+app_name = 'kilimoFund'
 
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path('signup/', signup, name='farmer-signup'),
+    path('login/', login, name='farmer-login'),
+    path('verify-membership/', verify_membership, name='verify-membership'),
 ]

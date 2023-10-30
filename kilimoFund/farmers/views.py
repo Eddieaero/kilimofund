@@ -1,44 +1,39 @@
-from django.shortcuts import render
-from rest_framework import viewsets, permissions
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
+from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from rest_framework.decorators import action
-from django.contrib.auth import login, logout
 from .models import Farmer
 from .serializers import FarmerSerializer
 
-class FarmerViewSet(viewsets.ModelViewSet):
-    queryset = Farmer.objects.all()
-    serializer_class = FarmerSerializer
+@api_view(['POST'])
+def signup(request):
+    if request.method == 'POST':
+        serializer = FarmerSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'message': 'Registration successful'})
+        return Response(serializer.errors, status=400)
 
-    @action(detail=False, methods=['POST'])
-    def login(self, request):
+@api_view(['POST'])
+def login(request):
+    if request.method == 'POST':
         email = request.data.get('email')
         password = request.data.get('password')
-
-        # Implement your login logic here (e.g., using Django's built-in authentication)
-        # You can use Django's authenticate() and login() functions
-
+        user = authenticate(request, username=email, password=password)
         if user is not None:
             login(request, user)
             return Response({'message': 'Login successful'})
+        return Response({'message': 'Login failed'}, status=400)
 
-        return Response({'message': 'Login failed'})
+@api_view(['POST'])
+@login_required
+def verify_membership(request):
+    email = request.data.get('email')
+    organization_license = request.data.get('organization_license')
 
-    @action(detail=False, methods=['POST'])
-    def signup(self, request):
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        return Response({'message': 'Registration successful'})
+    # Implement your membership verification logic here
 
-    @action(detail=False, methods=['POST'])
-    def verify_membership(self, request):
-        email = request.data.get('email')
-        organization_license = request.data.get('organization_license')
-
-        # Implement your membership verification logic here
-
-        if membership_verified:
-            return Response({'message': 'Membership verified'})
-        else:
-            return Response({'message': 'Membership not verified'}, status=400)
+    if membership_verified:
+        return Response({'message': 'Membership verified'})
+    return Response({'message': 'Membership not verified'}, status=400)

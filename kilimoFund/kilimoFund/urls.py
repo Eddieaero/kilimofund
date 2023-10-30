@@ -19,6 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/farmer/', include('farmers.urls')),  # Replace 'farmer' with your farmer app name
-    # path('api/officer/', include('officer.urls')),  # Replace 'officer' with your officer app name
+    path('api/farmer/', include('farmers.urls')),
+    path('api/officer/', include('bank_officers.urls')),
 ]

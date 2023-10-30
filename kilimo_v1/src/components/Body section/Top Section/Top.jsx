@@ -64,20 +64,20 @@ const Top = () => {
               <div className="leftCard flex">
                 <div className="main flex">
                     <div className="textDiv">
-                        <h1>My Stat</h1>
+                        <h1>My Stats</h1>
                         
                         <div className="flex">
-                            <span>
+                            {/* <span>
                                 Today <br/> <small>4 Orders</small>
-                            </span>
+                            </span> */}
 
                             <span>
-                                This Month <br/> <small>175 Orders</small>
+                                This Month <br/> <small>3 Requests</small>
                             </span>
                         </div>
 
                         <span className='flex link'>
-                            Go to my orders <BsArrowRightShort className='icon'/>
+                            Go to my Loan <BsArrowRightShort className='icon'/>
                         </span>
 
                     </div>

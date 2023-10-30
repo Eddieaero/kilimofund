@@ -8,10 +8,10 @@ import {HiOutlineHeart}  from "react-icons/hi";
 
 //  imported images====>
 import user1 from "../../../assets/8380015.jpg";
-import img1 from "../../../assets/pexels-johannes-plenio-1481264.jpg";
-import img2 from "../../../assets/pexels-pixabay-52738.jpg";
+import img1 from "../../../assets/tadb logo.jpeg";
+// import img2 from "../../../assets/pexels-pixabay-52738.jpg";
 import img3 from "../../../assets/pexels-thomas-brenac-599757.jpg";
-import img4 from "../../../assets/pexels-matthis-volquardsen-3793930.jpg";
+// import img4 from "../../../assets/pexels-matthis-volquardsen-3793930.jpg";
 
 
 

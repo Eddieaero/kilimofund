@@ -1,5 +1,12 @@
 from rest_framework import serializers
-from .models import Message, Guidelines
+from .models import *
+
+
+class BankOfficerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BankOfficer
+        fields = '__all__'
+
 
 class MessageSerializer(serializers.ModelSerializer):
     class Meta:
